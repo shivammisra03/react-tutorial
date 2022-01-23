@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
+import About from './components/About';
 
 let name = 'Shivam';
 function App() {
@@ -10,7 +11,8 @@ function App() {
       <Navbar title = "TextUtils2" aboutText = "About Text Utils"/>
       {/* <Navbar/> */}
       <div className="container my-3">
-        <TextForm heading = "Enter the text to analyze"/>
+        {/* <TextForm heading = "Enter the text to analyze"/> */}
+        <About/>
       </div>
       
     </>
