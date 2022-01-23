@@ -17,6 +17,18 @@ export default function TextForm(props) {
     const handleDownClick = () => {
         setText(text.toLowerCase())
     }
+
+    const handleClearText = () => {
+        setText('');
+    }
+
+    const handleReverse = () => {
+        let newText = '';
+        for(var i = text.length - 1; i >= 0; i--){
+            newText += text.charAt(i);
+        }
+        setText(newText)
+    }
     return (
         <>
         <div className='container'>
@@ -27,6 +39,9 @@ export default function TextForm(props) {
             </div>
             <button className="btn btn-primary" onClick={handleUpClick}>Convert to Uppercase</button>
             <button className="btn btn-primary mx-2" onClick={handleDownClick}>Convert to Lowercase</button>
+            <button className="btn btn-primary" onClick={handleReverse}>Reverse</button>
+            <button className="btn btn-primary mx-2" onClick={handleClearText}>Clear Text</button>
+            
         </div>
         <div className="container my-3">
             <h2>Your text summary</h2>
