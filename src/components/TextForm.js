@@ -29,6 +29,11 @@ export default function TextForm(props) {
         }
         setText(newText)
     }
+
+    const handleExtraSpace = () =>{
+        let newText = text.split(/[ ]+/);
+        setText(newText.join(" "));
+    }
     return (
         <>
         <div className='container'>
@@ -41,6 +46,7 @@ export default function TextForm(props) {
             <button className="btn btn-primary mx-2" onClick={handleDownClick}>Convert to Lowercase</button>
             <button className="btn btn-primary" onClick={handleReverse}>Reverse</button>
             <button className="btn btn-primary mx-2" onClick={handleClearText}>Clear Text</button>
+                <button className="btn btn-primary" onClick={handleExtraSpace}>Remove Extra Space</button>
             
         </div>
         <div className="container my-3">
