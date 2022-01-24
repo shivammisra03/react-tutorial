@@ -7,6 +7,7 @@ export default function TextForm(props) {
     const handleUpClick = () => {
         console.log("button was clicked")
         setText(text.toUpperCase())
+        props.showAlert('warning','Upclick was clicked')
     }
 
     const handleOnChange = (event) => {
@@ -16,10 +17,12 @@ export default function TextForm(props) {
 
     const handleDownClick = () => {
         setText(text.toLowerCase())
+        props.showAlert('warning', 'Downclick was clicked')
     }
 
     const handleClearText = () => {
         setText('');
+        props.showAlert('success', 'Text Has been cleared')
     }
 
     const handleReverse = () => {
@@ -28,18 +31,22 @@ export default function TextForm(props) {
             newText += text.charAt(i);
         }
         setText(newText)
+        props.showAlert('success', 'String was reversed')
+
     }
 
     const handleCopy = () => {
         var text = document.getElementById("myBox");
         text.select();
         navigator.clipboard.writeText(text.value);
+        props.showAlert('success', 'Text has been copied')
 
     }
 
     const handleExtraSpace = () =>{
         let newText = text.split(/[ ]+/);
         setText(newText.join(" "));
+        props.showAlert('success', 'Extra spaces have been removed')
     }
     return (
         <>
