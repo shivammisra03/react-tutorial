@@ -28,6 +28,7 @@ export default function About() {
     }
     
     return (
+        <>
         <div className="container" style={myStyle}>
             <h2 className='my-3'>About Us</h2>
             <div className="accordion" id="accordionExample">
@@ -70,5 +71,6 @@ export default function About() {
             </div>
             <button className="btn btn-primary my-2" onClick={handleStyleChange}>{btnText}</button>
         </div>
+        </>
     )
 }
