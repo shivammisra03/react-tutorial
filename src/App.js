@@ -49,11 +49,11 @@ function App() {
           {/* /users -> Component 1 */}
           {/* /users/home -> Component 2 */}
           <Route exact path="/about">
-            <About />
+            <About mode={mode}/>
           </Route>
         
           <Route exact path="/">
-              <TextForm heading="Enter the text to analyze" mode={mode} showAlert={showAlert} />
+              <TextForm heading="Try Text Utils - Word counter | Character Counter | Remove Extra Space" mode={mode} showAlert={showAlert} />
           </Route>
         </Switch>
 
