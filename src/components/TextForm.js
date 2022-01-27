@@ -5,13 +5,11 @@ export default function TextForm(props) {
     const [text, setText] = useState('');
 
     const handleUpClick = () => {
-        console.log("button was clicked")
         setText(text.toUpperCase())
         props.showAlert('warning', 'Upclick was clicked')
     }
 
     const handleOnChange = (event) => {
-        console.log("On change");
         setText(event.target.value);
     }
 
@@ -36,10 +34,7 @@ export default function TextForm(props) {
     }
 
     const handleCopy = () => {
-        var text = document.getElementById("myBox");
-        text.select();
-        navigator.clipboard.writeText(text.value);
-        document.getSelection().removeAllRanges();
+        navigator.clipboard.writeText(text);
         props.showAlert('success', 'Text has been copied')
 
     }
@@ -51,7 +46,7 @@ export default function TextForm(props) {
     }
 
     const countWords = (word) => {
-        return word.split(' ').filter((element) => { return element.length !== 0 }).length;
+        return word.split(/\s+/).filter((element) => { return element.length !== 0 }).length;
     }
     return (
         <>
